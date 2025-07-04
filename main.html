@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            color: white;
+                }
+
+        .main-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .SuperButton {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 15px, 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 8px 15px rgba(255, 65, 108, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 125px;
+            height: 40px;
+        }
+
+        .SuperButton:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(255, 75, 43, 0.5);
+        }
+
+        .SuperButton:active {
+            transform: scale(0.98);
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 20px;
+            animation: fadeIn 0,5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+                
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Hola!</h1>
+        <p>Pulsa el boton para ver el numero de telefono</p>
+        <button class="SuperButton" onclick="getInfo()">Ver número</button>
+        <p>Si su numero en el billete es: 973 - has ganado!, llamanos con el numero de telefono que está abjo.</p>
+        <h2>El numero de billete ganatorio:</h2>
+        <div id="result"></div>
+    </div>
+    <script>
+      function getInfo() {
+        const randomNumber = 973
+        const phone = "+34613678454"
+        document.getElementById('result').innerHTML = `
+        <p>${randomNumber}</p>
+        <h1>${phone}</h1>`
+      }
+    </script>
+</body>
+</html>
